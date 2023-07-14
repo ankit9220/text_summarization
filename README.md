@@ -18,7 +18,7 @@
 Clone the repository
 
 ```bash
-https://github.com/ankit9220/text_summarization
+https://github.com/ankit9220/text_Summarization
 ```
 ### STEP 01- Create a conda environment after opening the repository
 
