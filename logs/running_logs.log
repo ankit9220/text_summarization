@@ -1,0 +1,578 @@
+[2023-07-09 00:49:08,337: INFO: server: Started server process [34862]]
+[2023-07-09 00:49:08,337: INFO: on: Waiting for application startup.]
+[2023-07-09 00:49:08,337: INFO: on: Application startup complete.]
+[2023-07-09 00:49:08,338: ERROR: server: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): address already in use]
+[2023-07-09 00:49:08,338: INFO: on: Waiting for application shutdown.]
+[2023-07-09 00:49:08,338: INFO: on: Application shutdown complete.]
+[2023-07-09 00:49:39,770: INFO: server: Started server process [35238]]
+[2023-07-09 00:49:39,771: INFO: on: Waiting for application startup.]
+[2023-07-09 00:49:39,771: INFO: on: Application startup complete.]
+[2023-07-09 00:49:39,771: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-09 00:50:44,163: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-09 00:50:44,166: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:50:44,169: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:50:44,169: INFO: common: created directory at: artifacts]
+[2023-07-09 00:50:44,170: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-09 00:50:45,084: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 8090:2B3E:AC2BD9:CCF53D:64AA60EF
+Accept-Ranges: bytes
+Date: Sun, 09 Jul 2023 07:50:44 GMT
+Via: 1.1 varnish
+X-Served-By: cache-pao-kpao1770033-PAO
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1688889045.729242,VS0,VE145
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 779aaeb2bb00fe04838148e8359ae0a2aa2d12f7
+Expires: Sun, 09 Jul 2023 07:55:44 GMT
+Source-Age: 0
+
+]
+[2023-07-09 00:50:45,199: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:50:45,199: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-09 00:50:45,201: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:50:45,202: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:50:45,202: INFO: common: created directory at: artifacts]
+[2023-07-09 00:50:45,202: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-09 00:50:45,203: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:50:45,203: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-09 00:50:45,205: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:50:45,206: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:50:45,206: INFO: common: created directory at: artifacts]
+[2023-07-09 00:50:45,206: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-09 00:50:48,925: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:50:48,925: INFO: main: *******************]
+[2023-07-09 00:50:48,925: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-09 00:50:48,927: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:50:48,928: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:50:48,928: INFO: common: created directory at: artifacts]
+[2023-07-09 00:50:48,928: INFO: common: created directory at: artifacts/model_trainer]
+[2023-07-09 00:51:00,714: ERROR: main: Using the `Trainer` with `PyTorch` requires `accelerate>=0.20.1`: Please run `pip install transformers[torch]` or `pip install accelerate -U`]
+Traceback (most recent call last):
+  File "main.py", line 51, in <module>
+    model_trainer.main()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/conponents/model_trainer.py", line 34, in train
+    trainer_args = TrainingArguments(
+  File "<string>", line 111, in __init__
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/training_args.py", line 1340, in __post_init__
+    and (self.device.type != "cuda")
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/training_args.py", line 1764, in device
+    return self._setup_devices
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/generic.py", line 54, in __get__
+    cached = self.fget(obj)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/training_args.py", line 1672, in _setup_devices
+    raise ImportError(
+ImportError: Using the `Trainer` with `PyTorch` requires `accelerate>=0.20.1`: Please run `pip install transformers[torch]` or `pip install accelerate -U`
+[2023-07-09 00:54:10,701: INFO: server: Shutting down]
+[2023-07-09 00:54:10,803: INFO: on: Waiting for application shutdown.]
+[2023-07-09 00:54:10,804: INFO: on: Application shutdown complete.]
+[2023-07-09 00:54:10,805: INFO: server: Finished server process [35238]]
+[2023-07-09 00:54:46,957: INFO: server: Started server process [36051]]
+[2023-07-09 00:54:46,957: INFO: on: Waiting for application startup.]
+[2023-07-09 00:54:46,958: INFO: on: Application startup complete.]
+[2023-07-09 00:54:46,958: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-09 00:54:58,826: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-09 00:54:58,829: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:54:58,830: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:54:58,831: INFO: common: created directory at: artifacts]
+[2023-07-09 00:54:58,831: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-09 00:54:58,831: INFO: data_ingestion: File already exists of size: ~ 7718 KB]
+[2023-07-09 00:54:58,928: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:54:58,928: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-09 00:54:58,930: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:54:58,931: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:54:58,931: INFO: common: created directory at: artifacts]
+[2023-07-09 00:54:58,931: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-09 00:54:58,932: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:54:58,932: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-09 00:54:58,934: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:54:58,935: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:54:58,935: INFO: common: created directory at: artifacts]
+[2023-07-09 00:54:58,935: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-09 00:54:59,839: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/train/cache-539de273b6639e82.arrow]
+[2023-07-09 00:55:00,056: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/validation/cache-b0c8be5b843fb98a.arrow]
+[2023-07-09 00:55:00,212: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:55:00,212: INFO: main: *******************]
+[2023-07-09 00:55:00,212: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-09 00:55:00,215: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:55:00,216: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:55:00,216: INFO: common: created directory at: artifacts]
+[2023-07-09 00:55:00,216: INFO: common: created directory at: artifacts/model_trainer]
+[2023-07-09 00:55:12,701: ERROR: main: Placeholder storage has not been allocated on MPS device!]
+Traceback (most recent call last):
+  File "main.py", line 51, in <module>
+    model_trainer.main()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/conponents/model_trainer.py", line 47, in train
+    trainer.train()
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1938, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2759, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2784, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1416, in forward
+    outputs = self.model(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1253, in forward
+    encoder_outputs = self.encoder(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 769, in forward
+    inputs_embeds = self.embed_tokens(input_ids) * self.embed_scale
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/sparse.py", line 162, in forward
+    return F.embedding(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/functional.py", line 2210, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Placeholder storage has not been allocated on MPS device!
+[2023-07-09 00:56:46,591: INFO: server: Shutting down]
+[2023-07-09 00:56:46,693: INFO: on: Waiting for application shutdown.]
+[2023-07-09 00:56:46,694: INFO: on: Application shutdown complete.]
+[2023-07-09 00:56:46,695: INFO: server: Finished server process [36051]]
+[2023-07-09 00:56:51,399: INFO: server: Started server process [36217]]
+[2023-07-09 00:56:51,400: INFO: on: Waiting for application startup.]
+[2023-07-09 00:56:51,400: INFO: on: Application startup complete.]
+[2023-07-09 00:56:51,400: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-09 00:56:59,743: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-09 00:56:59,746: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:56:59,747: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:56:59,747: INFO: common: created directory at: artifacts]
+[2023-07-09 00:56:59,747: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-09 00:56:59,747: INFO: data_ingestion: File already exists of size: ~ 7718 KB]
+[2023-07-09 00:56:59,840: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:56:59,840: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-09 00:56:59,842: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:56:59,843: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:56:59,843: INFO: common: created directory at: artifacts]
+[2023-07-09 00:56:59,843: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-09 00:56:59,844: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:56:59,844: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-09 00:56:59,846: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:56:59,847: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:56:59,847: INFO: common: created directory at: artifacts]
+[2023-07-09 00:56:59,847: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-09 00:57:00,571: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/train/cache-539de273b6639e82.arrow]
+[2023-07-09 00:57:00,582: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/test/cache-ab800294ee681613.arrow]
+[2023-07-09 00:57:00,914: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 00:57:00,914: INFO: main: *******************]
+[2023-07-09 00:57:00,914: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-09 00:57:00,916: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 00:57:00,917: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 00:57:00,918: INFO: common: created directory at: artifacts]
+[2023-07-09 00:57:00,918: INFO: common: created directory at: artifacts/model_trainer]
+[2023-07-09 00:57:13,224: ERROR: main: Placeholder storage has not been allocated on MPS device!]
+Traceback (most recent call last):
+  File "main.py", line 51, in <module>
+    model_trainer.main()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/conponents/model_trainer.py", line 47, in train
+    trainer.train()
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1938, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2759, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2784, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1416, in forward
+    outputs = self.model(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1253, in forward
+    encoder_outputs = self.encoder(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 769, in forward
+    inputs_embeds = self.embed_tokens(input_ids) * self.embed_scale
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/sparse.py", line 162, in forward
+    return F.embedding(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/functional.py", line 2210, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Placeholder storage has not been allocated on MPS device!
+[2023-07-09 01:00:46,976: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-09 01:00:46,978: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 01:00:46,979: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 01:00:46,979: INFO: common: created directory at: artifacts]
+[2023-07-09 01:00:46,979: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-09 01:00:46,980: INFO: data_ingestion: File already exists of size: ~ 7718 KB]
+[2023-07-09 01:00:47,078: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-09 01:00:47,079: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-09 01:00:47,081: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 01:00:47,081: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 01:00:47,082: INFO: common: created directory at: artifacts]
+[2023-07-09 01:00:47,082: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-09 01:00:47,082: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 01:00:47,082: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-09 01:00:47,084: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 01:00:47,085: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 01:00:47,085: INFO: common: created directory at: artifacts]
+[2023-07-09 01:00:47,086: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-09 01:00:47,819: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/train/cache-539de273b6639e82.arrow]
+[2023-07-09 01:00:47,832: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/test/cache-ab800294ee681613.arrow]
+[2023-07-09 01:00:47,843: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/validation/cache-ddbfd1759c6ee733.arrow]
+[2023-07-09 01:00:48,013: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 01:00:48,013: INFO: main: *******************]
+[2023-07-09 01:00:48,013: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-09 01:00:48,016: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 01:00:48,017: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 01:00:48,017: INFO: common: created directory at: artifacts]
+[2023-07-09 01:00:48,017: INFO: common: created directory at: artifacts/model_trainer]
+[2023-07-09 01:01:00,185: ERROR: main: Placeholder storage has not been allocated on MPS device!]
+Traceback (most recent call last):
+  File "main.py", line 51, in <module>
+    model_trainer.main()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/conponents/model_trainer.py", line 48, in train
+    trainer.train()
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1938, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2759, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2784, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1416, in forward
+    outputs = self.model(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1253, in forward
+    encoder_outputs = self.encoder(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 769, in forward
+    inputs_embeds = self.embed_tokens(input_ids) * self.embed_scale
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/sparse.py", line 162, in forward
+    return F.embedding(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/functional.py", line 2210, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Placeholder storage has not been allocated on MPS device!
+[2023-07-09 01:02:11,816: INFO: server: Shutting down]
+[2023-07-09 01:02:11,918: INFO: on: Waiting for application shutdown.]
+[2023-07-09 01:02:11,920: INFO: on: Application shutdown complete.]
+[2023-07-09 01:02:11,920: INFO: server: Finished server process [36217]]
+[2023-07-09 11:36:42,979: INFO: server: Started server process [37942]]
+[2023-07-09 11:36:42,980: INFO: on: Waiting for application startup.]
+[2023-07-09 11:36:42,980: INFO: on: Application startup complete.]
+[2023-07-09 11:36:42,981: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-09 11:37:28,170: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-09 11:37:28,172: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 11:37:28,175: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 11:37:28,176: INFO: common: created directory at: artifacts]
+[2023-07-09 11:37:28,176: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-09 11:37:28,176: INFO: data_ingestion: File already exists of size: ~ 7718 KB]
+[2023-07-09 11:37:28,288: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-09 11:37:28,288: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-09 11:37:28,290: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 11:37:28,291: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 11:37:28,291: INFO: common: created directory at: artifacts]
+[2023-07-09 11:37:28,291: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-09 11:37:28,292: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 11:37:28,292: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-09 11:37:28,294: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 11:37:28,295: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 11:37:28,295: INFO: common: created directory at: artifacts]
+[2023-07-09 11:37:28,295: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-09 11:37:29,124: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/train/cache-539de273b6639e82.arrow]
+[2023-07-09 11:37:29,136: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/test/cache-ab800294ee681613.arrow]
+[2023-07-09 11:37:29,146: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/validation/cache-ddbfd1759c6ee733.arrow]
+[2023-07-09 11:37:29,356: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-09 11:37:29,356: INFO: main: *******************]
+[2023-07-09 11:37:29,356: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-09 11:37:29,359: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-09 11:37:29,360: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-09 11:37:29,360: INFO: common: created directory at: artifacts]
+[2023-07-09 11:37:29,360: INFO: common: created directory at: artifacts/model_trainer]
+[2023-07-09 11:37:41,928: ERROR: main: Placeholder storage has not been allocated on MPS device!]
+Traceback (most recent call last):
+  File "main.py", line 51, in <module>
+    model_trainer.main()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/conponents/model_trainer.py", line 48, in train
+    trainer.train()
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1938, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2759, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2784, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1416, in forward
+    outputs = self.model(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1253, in forward
+    encoder_outputs = self.encoder(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 769, in forward
+    inputs_embeds = self.embed_tokens(input_ids) * self.embed_scale
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/sparse.py", line 162, in forward
+    return F.embedding(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/functional.py", line 2210, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Placeholder storage has not been allocated on MPS device!
+[2023-07-09 13:08:27,010: INFO: server: Shutting down]
+[2023-07-09 13:08:27,118: INFO: on: Waiting for application shutdown.]
+[2023-07-09 13:08:27,124: INFO: on: Application shutdown complete.]
+[2023-07-09 13:08:27,125: INFO: server: Finished server process [37942]]
+[2023-07-13 18:37:38,010: INFO: server: Started server process [4624]]
+[2023-07-13 18:37:38,012: INFO: on: Waiting for application startup.]
+[2023-07-13 18:37:38,012: INFO: on: Application startup complete.]
+[2023-07-13 18:37:38,012: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-13 18:38:18,571: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-07-13 18:38:18,575: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-13 18:38:18,578: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-13 18:38:18,579: INFO: common: created directory at: artifacts]
+[2023-07-13 18:38:18,579: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-13 18:38:18,580: INFO: data_ingestion: File already exists of size: ~ 7718 KB]
+[2023-07-13 18:38:18,677: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-07-13 18:38:18,677: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-07-13 18:38:18,679: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-13 18:38:18,680: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-13 18:38:18,680: INFO: common: created directory at: artifacts]
+[2023-07-13 18:38:18,681: INFO: common: created directory at: artifacts/data_validation]
+[2023-07-13 18:38:18,681: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2023-07-13 18:38:18,681: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2023-07-13 18:38:18,683: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-13 18:38:18,684: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-13 18:38:18,684: INFO: common: created directory at: artifacts]
+[2023-07-13 18:38:18,684: INFO: common: created directory at: artifacts/data_transformation]
+[2023-07-13 18:38:19,564: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/train/cache-539de273b6639e82.arrow]
+[2023-07-13 18:38:19,574: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/test/cache-ab800294ee681613.arrow]
+[2023-07-13 18:38:19,583: WARNING: arrow_dataset: Loading cached processed dataset at /Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/artifacts/data_ingestion/samsum_dataset/validation/cache-ddbfd1759c6ee733.arrow]
+[2023-07-13 18:38:19,796: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2023-07-13 18:38:19,796: INFO: main: *******************]
+[2023-07-13 18:38:19,796: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2023-07-13 18:38:19,799: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-13 18:38:19,800: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-13 18:38:19,800: INFO: common: created directory at: artifacts]
+[2023-07-13 18:38:19,800: INFO: common: created directory at: artifacts/model_trainer]
+[2023-07-13 18:38:32,573: ERROR: main: Placeholder storage has not been allocated on MPS device!]
+Traceback (most recent call last):
+  File "main.py", line 51, in <module>
+    model_trainer.main()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/conponents/model_trainer.py", line 48, in train
+    trainer.train()
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 1938, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2759, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/trainer.py", line 2784, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1416, in forward
+    outputs = self.model(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 1253, in forward
+    encoder_outputs = self.encoder(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/models/pegasus/modeling_pegasus.py", line 769, in forward
+    inputs_embeds = self.embed_tokens(input_ids) * self.embed_scale
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/modules/sparse.py", line 162, in forward
+    return F.embedding(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/torch/nn/functional.py", line 2210, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Placeholder storage has not been allocated on MPS device!
+[2023-07-13 18:39:10,011: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-13 18:39:10,019: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-13 18:39:10,019: INFO: common: created directory at: artifacts]
+[2023-07-13 18:39:10,019: INFO: common: created directory at: artifacts/model_evaluation]
+[2023-07-13 18:39:10,252: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ankitgupta/Documents/Projects/Krish_Naik/Text-Summarization-NLP-Project-main/src/textSummarizer/pipeline/prediction.py", line 16, in predict
+    pipe = pipeline("summarization", model=self.config.model_path,tokenizer=tokenizer)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/pipelines/__init__.py", line 788, in pipeline
+    framework, model = infer_framework_load_model(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/transformers/pipelines/base.py", line 278, in infer_framework_load_model
+    raise ValueError(f"Could not load model {model} with any of the following classes: {class_tuple}.")
+ValueError: Could not load model artifacts/model_trainer/pegasus-samsum-model with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForSeq2SeqLM'>, <class 'transformers.models.pegasus.modeling_pegasus.PegasusForConditionalGeneration'>).
+[2023-07-13 18:39:36,817: INFO: server: Shutting down]
+[2023-07-13 18:39:36,920: INFO: on: Waiting for application shutdown.]
+[2023-07-13 18:39:36,922: INFO: on: Application shutdown complete.]
+[2023-07-13 18:39:36,922: INFO: server: Finished server process [4624]]
+[2023-07-13 18:46:17,597: INFO: server: Started server process [5325]]
+[2023-07-13 18:46:17,597: INFO: on: Waiting for application startup.]
+[2023-07-13 18:46:17,598: INFO: on: Application startup complete.]
+[2023-07-13 18:46:17,598: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-13 18:48:09,776: INFO: server: Shutting down]
+[2023-07-13 18:48:09,882: INFO: on: Waiting for application shutdown.]
+[2023-07-13 18:48:09,884: INFO: on: Application shutdown complete.]
+[2023-07-13 18:48:09,884: INFO: server: Finished server process [5325]]
+[2023-07-13 18:48:21,366: INFO: server: Started server process [5533]]
+[2023-07-13 18:48:21,366: INFO: on: Waiting for application startup.]
+[2023-07-13 18:48:21,366: INFO: on: Application startup complete.]
+[2023-07-13 18:48:21,367: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-13 18:48:32,710: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2023-07-13 18:48:32,717: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-13 18:48:32,718: INFO: common: created directory at: artifacts]
+[2023-07-13 18:48:32,719: INFO: common: created directory at: artifacts/model_evaluation]
+[2023-07-13 18:48:32,719: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/ankitgupta/opt/anaconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+UnboundLocalError: local variable 'text' referenced before assignment
+[2023-07-13 18:48:49,011: INFO: server: Shutting down]
+[2023-07-13 18:48:49,115: INFO: on: Waiting for application shutdown.]
+[2023-07-13 18:48:49,117: INFO: on: Application shutdown complete.]
+[2023-07-13 18:48:49,118: INFO: server: Finished server process [5533]]
+[2023-07-13 18:48:52,816: INFO: server: Started server process [5585]]
+[2023-07-13 18:48:52,816: INFO: on: Waiting for application startup.]
+[2023-07-13 18:48:52,816: INFO: on: Application startup complete.]
+[2023-07-13 18:48:52,816: INFO: server: Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)]
+[2023-07-13 19:58:56,051: INFO: server: Shutting down]
+[2023-07-13 19:58:56,174: INFO: on: Waiting for application shutdown.]
+[2023-07-13 19:58:56,181: INFO: on: Application shutdown complete.]
+[2023-07-13 19:58:56,181: INFO: server: Finished server process [5585]]
